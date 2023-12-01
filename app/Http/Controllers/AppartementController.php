@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appartement;
-use App\Models\FormationAppartement;
 use Illuminate\Http\Request;
 
 /**
@@ -61,10 +60,8 @@ class AppartementController extends Controller
     public function show($id)
     {
         $appartement = Appartement::find($id);
-        $formationAppartement = FormationAppartement();;
 
-        return view('appartement.show', compact('apprenant', 'formations'));
-}
+        return view('appartement.show', compact('appartement'));
     }
 
     /**
